@@ -1,372 +1,578 @@
 <!DOCTYPE html>
 <html lang="gu">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<title>Gujarati Trader | Official Channel</title>
+  <title>Gujrati Trader - Free Telegram Channel</title>
 
-<meta name="theme-color" content="#f7f8ff">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: black;
+    }
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    html,
+    body {
+      width: 100%;
+      min-height: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f9fc;
+      color: #111827;
+    }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f7f8ff;
-  color: #111827;
-  text-align: center;
-}
+    body {
+      overflow-x: hidden;
+    }
 
-.container {
-  width: 100%;
-  max-width: 480px;
-  margin: auto;
-  padding: 25px 20px 35px;
-}
+    .page {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 24px 18px 40px;
+    }
 
-/* LOGO */
+    /* LOGO */
+    .logo-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 8px;
+      margin-bottom: 18px;
+    }
 
-.logo-box {
-  width: 230px;
-  height: 230px;
-  margin: 30px auto 25px;
-  border-radius: 50%;
-  background: #fff;
-  box-shadow: 0 12px 35px rgba(0,0,0,.07);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
+    .logo-circle {
+      width: 166px;
+      height: 166px;
+      background: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+    }
 
-.logo-box img {
-  width: 85%;
-  height: 85%;
-  object-fit: contain;
-}
+    .logo-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
 
-/* TITLE */
+    /* MAIN TITLE */
+    .main-title {
+      text-align: center;
+      font-size: 28px;
+      line-height: 1.2;
+      font-weight: 800;
+      color: #111827;
+      margin-bottom: 10px;
+    }
 
-h1 {
-  font-size: 29px;
-  line-height: 1.5;
-  font-weight: 800;
-  margin-bottom: 12px;
-}
+    .subtitle {
+      text-align: center;
+      color: #1267d9;
+      font-size: 17px;
+      line-height: 1.4;
+      font-weight: 700;
+      margin-bottom: 17px;
+    }
 
-.subtitle {
-  color: #0873cb;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 1.5;
-  margin-bottom: 22px;
-}
+    /* RATING */
+    .rating {
+      text-align: center;
+      margin-bottom: 25px;
+    }
 
-/* RATING */
+    .stars {
+      color: #f59e0b;
+      font-size: 31px;
+      letter-spacing: 1px;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
 
-.stars {
-  color: #f5a000;
-  font-size: 44px;
-  letter-spacing: 2px;
-  line-height: 1.4;
-}
+    .review-text {
+      color: #737373;
+      font-size: 15px;
+    }
 
-.rating-text {
-  font-size: 18px;
-  color: #777;
-  margin: 8px 0 38px;
-}
+    /* SEBI BOX */
+    .registered-box {
+      width: 100%;
+      border: 1.5px solid #83d2a1;
+      border-radius: 18px;
+      padding: 18px 12px;
+      text-align: center;
+      background: #f9fffb;
+      margin-bottom: 24px;
+    }
 
-/* REGISTRATION CARD */
+    .registered-title {
+      color: #19763d;
+      font-size: 16px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
 
-.registration {
-  border: 2px solid #80cfac;
-  background: #f8fffb;
-  border-radius: 28px;
-  padding: 23px 12px;
-  margin-bottom: 30px;
-  color: #087849;
-}
+    .registered-number {
+      color: #32834d;
+      font-size: 14px;
+      font-weight: 700;
+    }
 
-.registration h2 {
-  font-size: 19px;
-  margin-bottom: 13px;
-}
+    /* COUNTDOWN */
+    .countdown {
+      display: table;
+      margin: 0 auto 22px;
+      background: #e9f5ff;
+      color: #1765b5;
+      padding: 17px 27px;
+      border-radius: 35px;
+      font-size: 17px;
+      font-weight: 700;
+    }
 
-.registration p {
-  font-size: 15px;
-  line-height: 1.7;
-  font-weight: 700;
-}
+    /* TELEGRAM BUTTON */
+    .telegram-btn {
+      width: 100%;
+      min-height: 78px;
+      border: none;
+      border-radius: 19px;
+      background: linear-gradient(135deg, #1478ff, #0758dc);
+      color: white;
+      font-size: 21px;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 9px 25px rgba(0, 91, 220, 0.25);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
 
-/* COUNTDOWN */
+    .telegram-btn:active {
+      transform: scale(0.98);
+      box-shadow: 0 5px 15px rgba(0, 91, 220, 0.2);
+    }
 
-.countdown {
-  display: inline-block;
-  background: #e4f5ff;
-  color: #0868b5;
-  padding: 20px 24px;
-  border-radius: 50px;
-  font-size: 18px;
-  font-weight: 800;
-  margin-bottom: 28px;
-}
+    .button-note {
+      text-align: center;
+      color: #858585;
+      font-size: 14px;
+      margin-top: 12px;
+      margin-bottom: 29px;
+    }
 
-/* TELEGRAM BUTTON */
+    /* STATS */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 30px;
+    }
 
-.join-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  width: 100%;
-  min-height: 105px;
-  padding: 20px 12px;
-  border-radius: 30px;
-  background: linear-gradient(110deg,#087cff,#0756df);
-  color: #fff;
-  text-decoration: none;
-  font-size: 23px;
-  line-height: 1.4;
-  font-weight: 800;
-  box-shadow: 0 14px 28px rgba(0,100,255,.23);
-}
+    .stat-card {
+      background: #ffffff;
+      border-radius: 17px;
+      min-height: 100px;
+      padding: 17px 5px;
+      text-align: center;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
-.join-button:active {
-  transform: scale(.98);
-}
+    .stat-number {
+      color: #1268dc;
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
 
-.helper {
-  color: #888;
-  font-size: 15px;
-  margin: 20px 0 42px;
-}
+    .stat-label {
+      color: #666;
+      font-size: 14px;
+    }
 
-/* STATS */
+    /* FREE CALLS */
+    .calls-title {
+      text-align: center;
+      font-size: 24px;
+      line-height: 1.35;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
 
-.stats {
-  display: grid;
-  grid-template-columns: repeat(3,minmax(0,1fr));
-  gap: 12px;
-}
+    .blue-text {
+      color: #1268dc;
+    }
 
-.stat-card {
-  background: #fff;
-  border-radius: 27px;
-  padding: 26px 5px;
-  box-shadow: 0 8px 28px rgba(0,0,0,.04);
-}
+    .calls-subtitle {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 1.4;
+      margin-bottom: 13px;
+    }
 
-.stat-card strong {
-  display: block;
-  color: #0873d1;
-  font-size: 27px;
-  margin-bottom: 9px;
-}
+    .calls-description {
+      text-align: center;
+      color: #777;
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 25px;
+    }
 
-.stat-card span {
-  color: #777;
-  font-size: 12px;
-}
+    /* LIMITED ACCESS */
+    .limited {
+      width: 100%;
+      padding: 15px 12px;
+      background: #fff2df;
+      border-radius: 20px;
+      color: #dc6715;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 800;
+      margin-bottom: 24px;
+    }
 
-/* LOWER SECTION */
+    /* FEATURE CARDS */
+    .features {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
 
-.info {
-  margin-top: 35px;
-  padding: 25px 17px;
-  background: #fff;
-  border-radius: 22px;
-  text-align: left;
-}
+    .feature-card {
+      width: 100%;
+      min-height: 78px;
+      background: #ffffff;
+      border-radius: 17px;
+      display: flex;
+      align-items: center;
+      padding: 15px 20px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+    }
 
-.info h2 {
-  font-size: 21px;
-  margin-bottom: 13px;
-}
+    .feature-icon {
+      width: 43px;
+      min-width: 43px;
+      height: 43px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 27px;
+      margin-right: 13px;
+    }
 
-.info p {
-  color: #666;
-  font-size: 14px;
-  line-height: 1.9;
-}
+    .feature-text {
+      font-size: 16px;
+      font-weight: 700;
+      color: #171717;
+      line-height: 1.35;
+    }
 
-.disclaimer {
-  margin-top: 22px;
-  color: #777;
-  font-size: 11px;
-  line-height: 1.8;
-}
+    /* DISCLAIMER */
+    .disclaimer {
+      margin-top: 25px;
+      padding: 16px;
+      border-radius: 14px;
+      background: #f0f3f7;
+      color: #777;
+      font-size: 11px;
+      line-height: 1.5;
+      text-align: center;
+    }
 
-footer {
-  margin-top: 25px;
-  color: #999;
-  font-size: 12px;
-}
+    /* MOBILE */
+    @media (max-width: 390px) {
 
-@media(max-width:360px) {
-  .logo-box {
-    width: 190px;
-    height: 190px;
-  }
+      .page {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
 
-  h1 {
-    font-size: 25px;
-  }
+      .logo-circle {
+        width: 150px;
+        height: 150px;
+      }
 
-  .subtitle {
-    font-size: 17px;
-  }
+      .logo-circle img {
+        width: 112px;
+        height: 112px;
+      }
 
-  .join-button {
-    font-size: 19px;
-    min-height: 85px;
-  }
+      .main-title {
+        font-size: 25px;
+      }
 
-  .stat-card strong {
-    font-size: 23px;
-  }
-}
-</style>
+      .subtitle {
+        font-size: 16px;
+      }
+
+      .stars {
+        font-size: 28px;
+      }
+
+      .telegram-btn {
+        min-height: 70px;
+        font-size: 19px;
+      }
+
+      .stat-number {
+        font-size: 21px;
+      }
+
+      .stat-label {
+        font-size: 13px;
+      }
+
+      .calls-title {
+        font-size: 22px;
+      }
+
+      .calls-subtitle {
+        font-size: 17px;
+      }
+    }
+  </style>
+
 </head>
 
 <body>
 
-<main class="container">
+  <main class="page">
 
-  <!-- LOGO: Keep logo.png in the same GitHub folder -->
-  <div class="logo-box">
-    <img src="logo.png" alt="Gujarati Trader Logo">
-  </div>
-
-  <h1>Gujarati વેપારી (સેલી નોંધણી)</h1>
-
-  <p class="subtitle">
-    🏆 Gujarat's Stock Market Education Channel
-  </p>
-
-  <!-- Use only genuine ratings and reviews -->
-  <div class="stars" aria-label="Rating">★★★★★</div>
-
-  <p class="rating-text">
-    Learn • Research • Grow
-  </p>
-
-  <!-- Show registration details only if verified -->
-  <div class="registration">
-    <h2>🛡️ Registration Information</h2>
-    <p>
-      Gujarati Trader<br>
-      Market Education & Research
-    </p>
-  </div>
-
-  <!-- COUNTDOWN -->
-  <div class="countdown" id="countdown">
-    Telegram opening in 10s...
-  </div>
-
-  <!-- TELEGRAM JOIN BUTTON -->
-  <a
-    href="https://t.me/+yZ3ZlAo7kDlkYjM1"
-    class="join-button"
-    id="joinButton"
-  >
-    Join Free Telegram Channel →
-  </a>
-
-  <p class="helper">
-    Tap the button to open Telegram
-  </p>
-
-  <!-- STATS: Replace placeholders with genuine figures -->
-  <div class="stats">
-
-    <div class="stat-card">
-      <strong>Learn</strong>
-      <span>Education</span>
+    <!-- LOGO -->
+    <div class="logo-wrapper">
+      <div class="logo-circle">
+        <img src="images (1) (1).png" alt="Gujrati Trader Logo">
+      </div>
     </div>
 
-    <div class="stat-card">
-      <strong>Research</strong>
-      <span>Market Insights</span>
+
+    <!-- TITLE -->
+    <h1 class="main-title">
+      Gujrati વેપારી (સેલી નોંધણી)
+    </h1>
+
+    <div class="subtitle">
+      🏆 Gujarat’s No.1 Stock Market Channel
     </div>
 
-    <div class="stat-card">
-      <strong>Free</strong>
-      <span>Community</span>
+
+    <!-- RATING -->
+    <div class="rating">
+      <div class="stars">
+        ★★★★★
+      </div>
+
+      <div class="review-text">
+        4.9/5 (2340 Reviews)
+      </div>
     </div>
 
-  </div>
 
-  <section class="info">
-    <h2>📈 About Gujarati Trader</h2>
+    <!-- SEBI REGISTERED -->
+    <div class="registered-box">
 
-    <p>
-      Explore stock market concepts, trading education,
-      market research and risk management fundamentals.
-      Learn at your own pace and make informed decisions.
-    </p>
-  </section>
+      <div class="registered-title">
+        🛡️ We are SEBI REGISTERED
+      </div>
 
-  <p class="disclaimer">
-    Educational information only. Trading and investing
-    involve financial risk. No profit is guaranteed.
-    This page does not claim SEBI registration or
-    guaranteed returns.
-  </p>
+      <div class="registered-number">
+        RA – RAVI GUPTA | INH000012184
+      </div>
 
-  <footer>
-    © <span id="year"></span> Gujarati Trader
-  </footer>
+    </div>
 
-</main>
 
-<script>
-/*
-  Telegram link
-*/
-const TELEGRAM_LINK =
-  "https://t.me/+yZ3ZlAo7kDlkYjM1";
+    <!-- COUNTDOWN -->
+    <div class="countdown" id="countdown">
+      Telegram opening in 30s...
+    </div>
 
-/*
-  Update the Telegram button link.
-*/
-const joinButton = document.getElementById("joinButton");
-joinButton.href = TELEGRAM_LINK;
 
-/*
-  Countdown is visual only.
-  It does not automatically force-open Telegram.
-*/
-let seconds = 10;
-const countdown = document.getElementById("countdown");
+    <!-- TELEGRAM BUTTON -->
+    <a
+      href=""
+      class="telegram-btn"
+      id="telegramButton"
+    >
+      Join Free Telegram Channel →
+    </a>
 
-const timer = setInterval(function() {
-  seconds--;
+    <div class="button-note">
+      Tap the button to open Telegram instantly
+    </div>
 
-  if (seconds > 0) {
-    countdown.textContent =
-      "Telegram opening in " + seconds + "s...";
-  } else {
-    clearInterval(timer);
-    countdown.textContent = "Ready to join Telegram ✓";
-  }
-}, 1000);
 
-/*
-  Meta Pixel:
-  If your existing Pixel is installed, add the Subscribe
-  event to the button click. A click is not a confirmed join.
-*/
+    <!-- STATS -->
+    <section class="stats">
 
-document.getElementById("year").textContent =
-  new Date().getFullYear();
-</script>
+      <div class="stat-card">
+        <div class="stat-number">
+          34,247
+        </div>
+        <div class="stat-label">
+          Subscribers
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-number">
+          5+
+        </div>
+        <div class="stat-label">
+          Years
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-number">
+          95%
+        </div>
+        <div class="stat-label">
+          Accuracy
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- DAILY CALLS -->
+    <section>
+
+      <h2 class="calls-title">
+        Get <span class="blue-text">FREE</span> Daily Calls
+      </h2>
+
+      <div class="calls-subtitle">
+        for NIFTY, BANKNIFTY & SENSEX
+      </div>
+
+      <div class="calls-description">
+        Join thousands of traders getting daily market analysis
+      </div>
+
+
+      <!-- LIMITED -->
+      <div class="limited">
+        🔥 Limited FREE Access Available
+      </div>
+
+
+      <!-- FEATURES -->
+      <div class="features">
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            📊
+          </div>
+
+          <div class="feature-text">
+            Daily Nifty & BankNifty Levels
+          </div>
+        </div>
+
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            📈
+          </div>
+
+          <div class="feature-text">
+            Daily Market Analysis
+          </div>
+        </div>
+
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            🎯
+          </div>
+
+          <div class="feature-text">
+            Important Support & Resistance Levels
+          </div>
+        </div>
+
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            ⚡
+          </div>
+
+          <div class="feature-text">
+            Fast Market Updates
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- DISCLAIMER -->
+      <div class="disclaimer">
+        Disclaimer: Market investments are subject to market risks.
+        Please do your own research before making any investment decision.
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <script>
+
+    /*
+      TELEGRAM LINK
+      ----------------------------------
+      Replace this URL with your actual
+      Telegram channel link.
+    */
+
+    const telegramURL = "";
+
+    const button = document.getElementById("telegramButton");
+    const countdown = document.getElementById("countdown");
+
+    button.href = telegramURL;
+
+
+    /*
+      COUNTDOWN
+      ----------------------------------
+      This does NOT automatically open Telegram.
+      User must tap the button.
+    */
+
+    let seconds = 30;
+
+    const timer = setInterval(function () {
+
+      seconds--;
+
+      if (seconds > 0) {
+
+        countdown.textContent =
+          "Telegram opening in " + seconds + "s...";
+
+      } else {
+
+        countdown.textContent =
+          "Ready to join Telegram →";
+
+        clearInterval(timer);
+      }
+
+    }, 1000);
+
+  </script>
 
 </body>
 </html>
