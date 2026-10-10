@@ -3,625 +3,322 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07111f">
+<title>Gujarati Trader | Premium Trading</title>
 
-<title>Gujarati Trader | Stock Market & Options Trading</title>
+<!-- META PIXEL: अपनी Pixel ID यहाँ डालें -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+t=b.createElement(e);t.async=!0;t.src=v;
+s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}
+(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 
-<meta name="description" content="Join Gujarati Trader for stock market education, Nifty and Bank Nifty analysis, trading insights and market updates.">
+const PIXEL_ID = 'YOUR_PIXEL_ID';
 
-<meta name="theme-color" content="#050b13">
+if(PIXEL_ID !== 'YOUR_PIXEL_ID'){
+  fbq('init',PIXEL_ID);
+  fbq('track','PageView');
+}
+</script>
 
 <style>
-:root {
-  --bg: #050b13;
-  --card: #0b1522;
-  --green: #00f59b;
-  --blue: #168cff;
-  --text: #f5f8ff;
-  --muted: #a1afc1;
-  --border: rgba(255,255,255,.09);
+:root{
+  --bg:#07111f;
+  --card:#0d1b2d;
+  --green:#19d39a;
+  --gold:#f3c969;
+  --text:#f4f8ff;
+  --muted:#9aacc2;
 }
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.container {
-  width: min(1120px, 92%);
-  margin: auto;
-}
-
-/* NAVBAR */
-
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(5,11,19,.94);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--border);
-}
-
-.nav-inner {
-  min-height: 76px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 11px;
-  font-size: 20px;
-  font-weight: 900;
-  white-space: nowrap;
-}
-
-.brand img {
-  width: 43px;
-  height: 43px;
-  object-fit: contain;
-}
-
-.brand span {
-  color: var(--green);
-}
-
-.nav-links {
-  display: flex;
-  gap: 24px;
-  color: #cbd5e1;
-  font-size: 13px;
-}
-
-.nav-links a:hover {
-  color: var(--green);
-}
-
-/* BUTTONS */
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 14px 23px;
-  background: linear-gradient(110deg, #078cff, #0878ef);
-  color: white;
-  font-size: 15px;
-  font-weight: 800;
-  border-radius: 50px;
-  border: 1px solid rgba(255,255,255,.12);
-  cursor: pointer;
-  transition: .25s;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 30px rgba(0,140,255,.3);
-}
-
-.btn-green {
-  background: linear-gradient(110deg, #00e890, #00bd75);
-  color: #02170e;
-  border: none;
-}
-
-.btn-green:hover {
-  box-shadow: 0 8px 30px rgba(0,245,155,.2);
-}
-
-/* HERO */
-
-.hero {
-  position: relative;
-  padding: 95px 0 85px;
-  overflow: hidden;
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
   background:
-    radial-gradient(ellipse at 85% 30%,
-    rgba(0,245,155,.10), transparent 42%),
-    radial-gradient(ellipse at 5% 80%,
-    rgba(22,140,255,.09), transparent 40%);
+  radial-gradient(ellipse at top,#102c49,transparent 60%),
+  var(--bg);
+  color:var(--text);
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.6;
 }
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.05fr .95fr;
-  align-items: center;
-  gap: 50px;
+a{text-decoration:none}
+.container{width:92%;max-width:1100px;margin:auto}
+header{
+  background:rgba(7,17,31,.96);
+  border-bottom:1px solid #243449;
+  position:sticky;top:0;z-index:10;
 }
-
-.eyebrow {
-  display: inline-block;
-  color: var(--green);
-  background: rgba(0,245,155,.08);
-  border: 1px solid rgba(0,245,155,.22);
-  border-radius: 50px;
-  padding: 8px 14px;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 1px;
-  margin-bottom: 23px;
+nav{
+  min-height:75px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
 }
-
-h1 {
-  font-size: clamp(40px, 5vw, 65px);
-  line-height: 1.09;
-  letter-spacing: -2px;
-  margin-bottom: 23px;
+.logo{display:flex;align-items:center;gap:10px;font-weight:bold}
+.logo-icon{
+  background:linear-gradient(135deg,var(--green),var(--gold));
+  color:#07111f;
+  width:43px;height:43px;border-radius:13px;
+  display:grid;place-items:center;font-size:23px;
 }
-
-.gradient-text {
-  color: var(--green);
+.logo small{display:block;color:var(--muted);font-size:10px;letter-spacing:2px}
+.btn{
+  display:inline-block;padding:14px 22px;
+  border-radius:12px;font-weight:bold;
+  text-align:center;transition:.2s;
 }
-
-.hero-description {
-  color: var(--muted);
-  font-size: 16px;
-  max-width: 490px;
-  margin-bottom: 27px;
+.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.green{
+  color:#04151a;
+  background:linear-gradient(110deg,#19d39a,#a8f3ca);
+  box-shadow:0 8px 25px #19d39a25;
 }
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 13px;
+.gold{
+  color:#201805;
+  background:linear-gradient(110deg,#f3c969,#ffe8a4);
 }
-
-.hero-note {
-  color: #8b9aaf;
-  font-size: 12px;
-  margin-top: 16px;
+.hero{
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:center;gap:40px;padding:80px 0 55px;
 }
-
-/* CHART PANEL */
-
-.chart-panel {
-  position: relative;
-  background: linear-gradient(145deg, #0d1a29, #070d17);
-  border: 1px solid rgba(0,245,155,.2);
-  border-radius: 22px;
-  padding: 24px;
-  box-shadow: 0 20px 80px rgba(0,0,0,.35);
-  overflow: hidden;
+.badge{
+  display:inline-block;color:var(--green);
+  background:#19d39a12;border:1px solid #19d39a45;
+  border-radius:50px;padding:7px 13px;font-size:12px;
+  letter-spacing:1px;font-weight:bold;
 }
-
-.chart-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
+h1{
+  font-size:clamp(38px,5vw,63px);
+  line-height:1.12;margin:22px 0;
+  letter-spacing:-1.5px;
 }
-
-.chart-title {
-  font-size: 17px;
-  font-weight: 800;
+.gradient{
+  background:linear-gradient(90deg,var(--green),var(--gold));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
 }
-
-.live-label {
-  font-size: 10px;
-  color: var(--green);
-  background: rgba(0,245,155,.08);
-  padding: 6px 9px;
-  border-radius: 20px;
+.lead{color:var(--muted);font-size:17px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:27px}
+.note{font-size:12px;color:#879bb3;margin-top:18px}
+.chart-card{
+  background:linear-gradient(145deg,#10243a,#0a1727);
+  border:1px solid #ffffff16;border-radius:23px;
+  padding:24px;box-shadow:0 25px 70px #0005;
+  animation:appear .8s ease;
 }
-
-.chart-price {
-  font-size: 30px;
-  font-weight: 900;
+.card-head{display:flex;justify-content:space-between;gap:10px}
+.card-head p{font-size:12px;color:var(--muted)}
+.live{color:var(--green);font-size:11px;font-weight:bold}
+.chart{width:100%;height:auto;margin:20px 0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.stat{
+  padding:12px;background:#ffffff07;
+  border:1px solid #ffffff10;border-radius:12px;
 }
-
-.chart-caption {
-  color: var(--muted);
-  font-size: 12px;
-  margin-bottom: 15px;
+.stat span{display:block;color:var(--muted);font-size:11px}
+.stat strong{font-size:13px}
+section.content{padding:55px 0}
+.heading{text-align:center;max-width:680px;margin:0 auto 30px}
+.heading h2{font-size:clamp(28px,4vw,40px);line-height:1.2;margin-bottom:12px}
+.heading p{color:var(--muted)}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.feature{
+  background:var(--card);border:1px solid #ffffff12;
+  padding:24px;border-radius:18px;transition:.25s;
 }
-
-.chart-caption span {
-  color: var(--green);
+.feature:hover{transform:translateY(-5px);border-color:#19d39a66}
+.icon{
+  width:46px;height:46px;display:grid;place-items:center;
+  background:#19d39a15;border-radius:13px;font-size:23px;
+  margin-bottom:15px;
 }
-
-.chart {
-  width: 100%;
-  height: 190px;
-  display: block;
+.feature h3{margin-bottom:8px}
+.feature p{font-size:14px;color:var(--muted)}
+.join-box{
+  margin:25px auto 55px;text-align:center;
+  padding:45px 25px;border-radius:24px;
+  border:1px solid #f3c96940;
+  background:linear-gradient(135deg,#f3c96912,#19d39a0d,#10243a);
 }
-
-.chart-footer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 9px;
-  margin-top: 20px;
+.join-box h2{font-size:clamp(29px,4vw,43px);margin:15px 0}
+.join-box p{color:var(--muted);max-width:650px;margin:0 auto 24px}
+.disclaimer{
+  color:#8295ad;font-size:11px;
+  text-align:center;padding-bottom:25px;
 }
-
-.chart-tag {
-  border: 1px solid var(--border);
-  background: #101d2c;
-  border-radius: 8px;
-  padding: 7px 12px;
-  color: #cbd5e1;
-  font-size: 11px;
+footer{border-top:1px solid #ffffff14;padding:22px 0;color:var(--muted);font-size:12px}
+.footer-inner{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+@keyframes appear{
+  from{opacity:0;transform:translateY(15px)}
+  to{opacity:1;transform:translateY(0)}
 }
-
-/* STATS */
-
-.stats {
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  background: #080f19;
+@media(max-width:750px){
+  .hero{grid-template-columns:1fr;padding:50px 0 35px;gap:30px}
+  .features{grid-template-columns:1fr}
+  nav{min-height:68px}
+  .btn{padding:12px 15px;font-size:13px}
+  .chart-card{padding:18px}
+  section.content{padding:35px 0}
 }
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
+@media(prefers-reduced-motion:reduce){
+  ,::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}
 }
-
-.stat {
-  padding: 26px 20px;
-  text-align: center;
-  border-right: 1px solid var(--border);
-}
-
-.stat:last-child {
-  border-right: none;
-}
-
-.stat strong {
-  display: block;
-  color: var(--green);
-  font-size: 17px;
-  margin-bottom: 4px;
-}
-
-.stat span {
-  color: var(--muted);
-  font-size: 12px;
-}
-
-/* SECTIONS */
-
-.section {
-  padding: 85px 0;
-}
-
-.section-heading {
-  text-align: center;
-  max-width: 650px;
-  margin: 0 auto 42px;
-}
-
-.section-heading h2 {
-  font-size: clamp(28px, 4vw, 40px);
-  line-height: 1.2;
-  margin-bottom: 14px;
-}
-
-.section-heading p {
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.features {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 18px;
-}
-
-.feature-card {
-  padding: 28px 23px;
-  border: 1px solid var(--border);
-  border-radius: 17px;
-  background: linear-gradient(145deg, #0c1725, #080e17);
-  transition: .25s;
-}
-
-.feature-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(0,245,155,.4);
-}
-
-.feature-icon {
-  width: 49px;
-  height: 49px;
-  display: grid;
-  place-items: center;
-  border-radius: 13px;
-  background: rgba(0,245,155,.09);
-  color: var(--green);
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.feature-card h3 {
-  font-size: 17px;
-  margin-bottom: 11px;
-}
-
-.feature-card p {
-  color: var(--muted);
-  font-size: 13px;
-}
-
-/* WHAT YOU GET */
-
-.benefits {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 35px;
-  align-items: center;
-}
-
-.benefit-panel {
-  padding: 30px;
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  background: var(--card);
-}
-
-.benefit-panel h2 {
-  font-size: 29px;
-  margin-bottom: 24px;
-}
-
-.benefit-list {
-  list-style: none;
-}
-
-.benefit-list li {
-  display: flex;
-  gap: 12px;
-  margin: 16px 0;
-  color: #dce5ef;
-  font-size: 14px;
-}
-
-.check {
-  color: var(--green);
-  font-weight: 900;
-}
-
-.insight-panel {
-  padding: 28px;
-  border-radius: 20px;
-  border: 1px solid rgba(22,140,255,.2);
-  background:
-    radial-gradient(ellipse at top right,
-    rgba(22,140,255,.12), transparent 60%),
-    #09121f;
-}
-
-.insight-panel h3 {
-  font-size: 25px;
-  margin-bottom: 15px;
-}
-
-.insight-panel p {
-  color: var(--muted);
-  font-size: 14px;
-  margin-bottom: 22px;
-}
-
-.pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.pill {
-  border: 1px solid rgba(0,245,155,.3);
-  color: var(--green);
-  border-radius: 30px;
-  padding: 7px 13px;
-  font-size: 12px;
-}
-
-/* CTA */
-
-.cta {
-  padding: 0 0 75px;
-}
-
-.cta-box {
-  position: relative;
-  overflow: hidden;
-  padding: 43px;
-  border-radius: 24px;
-  background: linear-gradient(115deg, #063e38, #075b69, #0b3c77);
-  border: 1px solid rgba(255,255,255,.12);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 25px;
-}
-
-.cta-box h2 {
-  font-size: clamp(24px, 3vw, 35px);
-  margin-bottom: 8px;
-}
-
-.cta-box p {
-  color: #d4e9ed;
-  font-size: 14px;
-}
-
-.cta-box .btn {
-  flex-shrink: 0;
-  background: white;
-  color: #06477e;
-}
-
-/* DISCLAIMER */
-
-.disclaimer {
-  color: #8392a6;
-  font-size: 11px;
-  line-height: 1.8;
-  padding: 0 0 35px;
-  text-align: center;
-}
-
-/* FOOTER */
-
-footer {
-  border-top: 1px solid var(--border);
-  padding: 30px 0;
-  background: #030810;
-}
-
-.footer-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.footer-text {
-  color: var(--muted);
-  font-size: 12px;
-}
-
-/* MOBILE */
-
-@media(max-width:850px) {
-  .nav-links {
-    display: none;
-  }
-
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .hero {
-    padding: 65px 0;
-  }
-
-  .hero-copy {
-    text-align: center;
-  }
-
-  .hero-description {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero-actions {
-    justify-content: center;
-  }
-
-  .chart-panel {
-    max-width: 550px;
-    width: 100%;
-    margin: auto;
-  }
-
-  .features {
-    grid-template-columns: repeat(2,1fr);
-  }
-
-  .benefits {
-    grid-template-columns: 1fr;
-  }
-
-  .cta-box {
-    flex-direction: column;
-    text-align: center;
-    padding: 35px 22px;
-  }
-}
-
-@media(max-width:520px) {
-  .container {
-    width: 90%;
-  }
-
-  .nav-inner {
-    min-height: 67px;
-  }
-
-  .brand {
-    font-size: 15px;
-    gap: 7px;
-  }
-
-  .brand img {
-    width: 34px;
-    height: 34px;
-  }
-
-  .nav-inner > .btn {
-    font-size: 11px;
-    padding: 10px 13px;
-  }
-
-  h1 {
-    font-size: 43px;
-    letter-spacing: -1.5px;
-  }
-
-  .hero-description {
-    font-size: 14px;
-  }
-
-  .hero-actions .btn {
-    width: 100%;
-  }
-
-  .chart-panel {
-    padding: 17px;
-  }
-
-  .chart {
-    height: 150px;
-  }
-
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .stat {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-    padding: 19px;
-  }
-
-  .stat:last-child {
-    border-bottom: none;
-  }
-
-  .section {
-    padding: 60px 0;
-  }
-
-  .features {
-    grid-template-columns: 1fr;
-  }
-
-  .benefit-panel,
-  .insight-panel {
-    padding: 23px 19px;
-  }
-
-  .benefit-panel h2 {
-    font-size: 25px;
+</style>
+</head>
+
+<body>
+<header>
+  <nav class="container">
+    <a href="#" class="logo">
+      <span class="logo-icon">G</span>
+      <span>GUJARATI TRADER
+        <small>MARKET INSIGHTS</small>
+      </span>
+    </a>
+    <a class="btn green telegram-join"
+       href="https://t.me/+yZ3ZlAo7kDlkYjM1"
+       target="_blank" rel="noopener noreferrer">
+       Join Telegram ↗️
+    </a>
+  </nav>
+</header>
+
+<main>
+<div class="container">
+<section class="hero">
+  <div>
+    <span class="badge">✦ LEARN • RESEARCH • GROW</span>
+    <h1>Trade with a plan.<br>
+      <span class="gradient">Learn with clarity.</span>
+    </h1>
+    <p class="lead">
+      Welcome to Gujarati Trader. Explore market education,
+      trading concepts and useful market updates in one place.
+    </p>
+    <div class="actions">
+      <a class="btn green telegram-join"
+         href="https://t.me/+yZ3ZlAo7kDlkYjM1"
+         target="_blank" rel="noopener noreferrer">
+         ✦ Join Our Telegram
+      </a>
+      <a class="btn gold" href="#features">Explore More ↓</a>
+    </div>
+    <p class="note">
+      Educational content only. Trading involves risk.
+      No profits are guaranteed.
+    </p>
+  </div>
+
+  <div class="chart-card">
+    <div class="card-head">
+      <div>
+        <strong>Market Snapshot</strong>
+        <p>Illustrative chart · Not live data</p>
+      </div>
+      <span class="live">● MARKET WATCH</span>
+    </div>
+
+    <svg class="chart" viewBox="0 0 500 190" role="img"
+         aria-label="Decorative market chart">
+      <defs>
+        <linearGradient id="area" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#19d39a" stop-opacity=".3"/>
+          <stop offset="100%" stop-color="#19d39a" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <g stroke="#ffffff12">
+        <path d="M0 30H500 M0 70H500 M0 110H500 M0 150H500"/>
+        <path d="M50 0V190 M150 0V190 M250 0V190 M350 0V190 M450 0V190"/>
+      </g>
+      <path d="M0 145L35 132L65 143L100 100L130 115L165 82L195 99L230 58L265 76L300 43L330 63L365 32L395 48L430 21L465 38L500 12V190H0Z"
+            fill="url(#area)"/>
+      <polyline points="0,145 35,132 65,143 100,100 130,115 165,82 195,99 230,58 265,76 300,43 330,63 365,32 395,48 430,21 465,38 500,12"
+        fill="none" stroke="#19d39a" stroke-width="3"
+        stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="500" cy="12" r="5" fill="#f3c969"/>
+    </svg>
+
+    <div class="stats">
+      <div class="stat"><span>Focus</span><strong>Education</strong></div>
+      <div class="stat"><span>Approach</span><strong>Research</strong></div>
+      <div class="stat"><span>Community</span><strong>Telegram</strong></div>
+    </div>
+  </div>
+</section>
+
+<section class="content" id="features">
+  <div class="heading">
+    <h2>A smarter way to <span class="gradient">stay informed</span></h2>
+    <p>Learn step by step. Make independent decisions and always
+       understand the risks before trading.</p>
+  </div>
+
+  <div class="features">
+    <article class="feature">
+      <div class="icon">📊</div>
+      <h3>Market Learning</h3>
+      <p>Understand trading terms, chart concepts and market basics
+         in a simple format.</p>
+    </article>
+    <article class="feature">
+      <div class="icon">🧭</div>
+      <h3>Research Mindset</h3>
+      <p>Focus on preparation, discipline and risk management
+         rather than guaranteed returns.</p>
+    </article>
+    <article class="feature">
+      <div class="icon">🔔</div>
+      <h3>Community Updates</h3>
+      <p>Join our Telegram community for the educational posts
+         and updates shared there.</p>
+    </article>
+  </div>
+</section>
+
+<section class="join-box" id="join">
+  <span class="badge">GUJARATI TRADER COMMUNITY</span>
+  <h2>Ready to join the <span class="gradient">community?</span></h2>
+  <p>Open our Telegram channel for market education and community
+     updates. Review information carefully before making financial decisions.</p>
+  <a class="btn green telegram-join"
+     href="https://t.me/+yZ3ZlAo7kDlkYjM1"
+     target="_blank" rel="noopener noreferrer">
+     📲 Join on Telegram ↗️
+  </a>
+</section>
+
+<p class="disclaimer">
+  Disclaimer: This website is for educational and informational
+  purposes only and is not financial or investment advice.
+  Trading and investing involve risk, including loss of capital.
+  No return or profit is guaranteed. The chart is illustrative
+  and does not display live prices.
+</p>
+</div>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© <span id="year"></span> Gujarati Trader</span>
+    <span>Learn responsibly · Manage risk</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* This records a click on the Telegram button, not a confirmed Telegram join. */
+document.querySelectorAll('.telegram-join').forEach(function(link){
+  link.addEventListener('click',function(){
+    if(typeof window.fbq === 'function'){
+      window.fbq('track','Subscribe');
+    }
+  });
+});
+</script>
+</body>
+</html>
